@@ -70,33 +70,28 @@ def step(A_):
     return Q['S'], Q['Q reward'], Q['Q done']
 
 """
-Q(s, a) for s is a member of S+
-            a is a member of A(s)
-except Q(terminal;) = 0
+    Q(s, a) for s is a member of S+
+                a is a member of A(s)
+    except Q(terminal;) = 0
 """
 
 for i in range(EPISODES):
-    "initialize S"
     Q['S'] = []
     Q['Q done'] = False
     Q['Q reward'] = 0
     ep_reward = 0
     ep_actions = []
     while Q['Q done'] == False:
-        "Choose A from s using policy derived from Q"
         if random.random() < EPSILON:
             A_ = random.choice(Q['A'])
         else:
             A_ = e_greedy(Q['S'])
-        "take action A, observe, R, S'"
         S_next, R, done = step(A_)
-        "Q(S, A) update"
         update(Q['S'], A_, R, S_next)
         ep_reward += R
         "S = S'"
         Q['S'] = S_next
         ep_actions.append(A_)
-    "until S is terminal"
 
     if EPSILON > 0.1:
         EPSILON = EPSILON * 0.9
