@@ -89,7 +89,6 @@ for i in range(EPISODES):
         S_next, R, done = step(A_)
         update(Q['S'], A_, R, S_next)
         ep_reward += R
-        "S = S'"
         Q['S'] = S_next
         ep_actions.append(A_)
 
