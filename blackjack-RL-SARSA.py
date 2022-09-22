@@ -1,7 +1,7 @@
 """
     Blackjack Expected SARSA Reinforcement Learning
     ===============================================
-    Expected SARSA Reinforcement Learning implementation for Blackjack in Python 
+    Expected SARSA Reinforcement Learning Implementation for Blackjack in Python 
     a = (0, 1]
     e > 0
     Expected SARSA:
