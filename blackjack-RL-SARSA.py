@@ -17,7 +17,7 @@ import random
 
 ALPHA = 0.3
 GAMMA = 0.95
-EPSILON = 0.1
+EPSILON = 1.0
 EPISODES = 1000
 
 Q = { 'A': [i for i in range(1, 11)] + [10 for i in range(3)],
