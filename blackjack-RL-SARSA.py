@@ -39,7 +39,7 @@ def e_greedy(S_):
     return Q['A'][A_index]
 
 def a_prob(S_):
-    S_next_prob = [EPSILON/len(Q['A'])] * len(Q['A'])
+    S_next_prob = [EPSILON/len(Q['A']) for i in range(len(Q['A']))]
     A_max = e_greedy(S_)
     S_next_prob[A_max] += 1 - EPSILON
     return S_next_prob
